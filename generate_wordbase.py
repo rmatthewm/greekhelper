@@ -20,9 +20,7 @@ def parse_pdf():
         # If this line is a grammatical category heading
         if category_re.fullmatch(line):
             # Get the category name
-            opening = line.index('[') + 1
-            closing = line.index(']')
-            category = line[opening:closing]
+            category = re.search(r'\[([A-Z]+)\s*.*\]', line)[1]
             print('category: ', category)
 
         # If this line is a word definition
