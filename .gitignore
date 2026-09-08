@@ -1,7 +1,6 @@
 *.pdf
 *.csv
-*.txt
 .DS_Store
 .venv/
 .vscode/
-.__pycache__/
+__pycache__/
