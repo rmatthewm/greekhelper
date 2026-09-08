@@ -27,8 +27,11 @@ def parse_pdf():
         elif definition_re.fullmatch(line):
             match = re.search(r'\s*([^a-zA-Z()\s]+(?:\s*[^a-zA-Z\s])*)\s*[a-zA-Z()\s,;.]', line)
             word = match.group(1)
+
+            match = re.search(r'[^a-zA-Z]+([a-zA-Z();,.]+(?:\s*[a-zA-Z();,.]+)*)', line)
+            definition = match.group(1)
             print(line)
-            print(f'"{word}"')
+            print(f'"{definition}"')
 
 
 def main():
